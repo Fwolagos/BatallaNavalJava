@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.stage.Stage?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.batallanaval.CreditsWindowController">
-    
-</AnchorPane>
+<Stage xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <scene>
+        <Scene>
+            <AnchorPane prefHeight="238.0" prefWidth="255.0">
+            <children>
+               <Canvas height="332.0" layoutX="14.0" layoutY="-7.0" width="369.0" />
+               <Label layoutX="135.0" layoutY="44.0" prefHeight="30.0" prefWidth="102.0" text="BattlerShip Credits" />
+               <Label layoutX="95.0" layoutY="95.0" text="Autor: Antony Josue Prendas Vega" />
+               <TextArea layoutX="86.0" layoutY="159.0" prefHeight="145.0" prefWidth="200.0" text="Battlership is a strategy &#10;board game for two player&#10; where players take turn &#10;guessing the locati'on fo &#10;their opponent's ships.&#10; The goal is to sink the other &#10;player's fleet." />
+            </children></AnchorPane>
+        </Scene>
+    </scene>
+</Stage>
