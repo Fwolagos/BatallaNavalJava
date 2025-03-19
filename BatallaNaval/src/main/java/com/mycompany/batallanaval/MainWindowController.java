@@ -11,16 +11,16 @@ import javafx.fxml.Initializable;
 /**
  * FXML Controller class
  *
- * @author ANTONY JOSUE
+ * @author Estudiante
  */
 public class MainWindowController implements Initializable {
 
-	/**
-	 * Initializes the controller class.
-	 */
-	@Override
-	public void initialize(URL url, ResourceBundle rb) {
-		// TODO
-	}	
-	
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
+    
 }
