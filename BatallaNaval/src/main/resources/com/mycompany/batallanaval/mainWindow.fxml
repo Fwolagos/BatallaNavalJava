@@ -15,7 +15,7 @@
       </Label>
       <ButtonBar layoutX="169.0" layoutY="204.0" prefHeight="40.0" prefWidth="200.0">
          <buttons>
-            <Button mnemonicParsing="false" text="Start" />
+            <Button fx:id="btnGo" mnemonicParsing="false" onAction="#go" text="Go" />
             <Button layoutX="48.0" layoutY="17.0" mnemonicParsing="false" text="Exit" />
             <Button layoutX="135.0" layoutY="17.0" mnemonicParsing="false" text="About It" />
          </buttons>

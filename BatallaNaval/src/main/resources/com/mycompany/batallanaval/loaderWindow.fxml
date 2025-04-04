@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane id="AnchorPane" accessibleRole="CHECK_BOX" prefHeight="448.0" prefWidth="637.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.mycompany.batallanaval.LoaderWindowController">
+   <children>
+      <GridPane gridLinesVisible="true" layoutX="317.0" layoutY="14.0" prefHeight="166.0" prefWidth="194.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <Button layoutX="211.0" layoutY="354.0" mnemonicParsing="false" text="Random" />
+      <Button fx:id="btnBack" layoutX="580.0" layoutY="353.0" mnemonicParsing="false" onAction="#back" text="Back" />
+      <VBox layoutX="18.0" layoutY="14.0" prefHeight="304.0" prefWidth="250.0" />
+      <Button layoutX="489.0" layoutY="354.0" mnemonicParsing="false" text="Start Game" />
+      <Button layoutX="165.0" layoutY="354.0" mnemonicParsing="false" text="Set" />
+      <Spinner fx:id="spnRow" layoutX="17.0" layoutY="354.0" prefHeight="5.0" prefWidth="50.0" />
+      <Spinner fx:id="spnColumn" layoutX="93.0" layoutY="354.0" prefHeight="5.0" prefWidth="50.0" />
+      <Label layoutX="17.0" layoutY="331.0" prefHeight="19.0" prefWidth="50.0" text="Row" />
+      <Label layoutX="93.0" layoutY="331.0" prefHeight="19.0" prefWidth="50.0" text="Column" />
+      <ListView fx:id="lvPlayer" layoutX="367.0" layoutY="353.0" prefHeight="26.0" prefWidth="115.0" />
+      <Label layoutX="300.0" layoutY="331.0" prefHeight="19.0" prefWidth="50.0" text="Difficult:" />
+      <Label layoutX="379.0" layoutY="331.0" prefHeight="19.0" prefWidth="50.0" text="Player:" />
+      <ListView fx:id="lvDifficult" layoutX="287.0" layoutY="353.0" prefHeight="26.0" prefWidth="75.0" />
+      <TextField layoutX="287.0" layoutY="393.0" prefHeight="26.0" prefWidth="196.0" promptText="Player Name" />
+   </children>
+</AnchorPane>
