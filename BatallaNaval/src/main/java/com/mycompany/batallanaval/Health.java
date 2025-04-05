@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.batallanaval;
+import java.net.URL;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 /**
@@ -10,35 +11,91 @@ import javafx.scene.image.ImageView;
  * @author ANTONY JOSUE
  */
 public class Health extends ImageView {
-    public static final String LIVING = "img/ruta";
-    public static final String DAMAGED = "img/ruta";
-    public static final String DEAD = "img/ruta";
-    protected int state; // 2 vivo, 1 d;ado, 0 muerto
-    public Health(){
-        this.state = 2;
-        Image photo = new Image(LIVING);
+    public static final String[] TYPES = {"submarines","destroyers","cruisers","battleship"};
+    public static final String BASEPATH = "others/img/";
+
+
+// Submarinos
+public static final String[] SUBMARINES_OK = {
+    BASEPATH+"submarines/submarine.jpg"
+};
+public static final String[] SUBMARINES_DAMAGED = {
+    BASEPATH + "submarines/submarineDamaged.jpg"
+};
+
+// Destroyers (2 partes)
+public static final String[] DESTROYERS_OK = {
+    BASEPATH + "destroyers/DestroyerLeft.jpg",
+    BASEPATH + "destroyers/DestroyerRight.jpg"
+};
+public static final String[] DESTROYERS_DAMAGED = {
+    BASEPATH + "destroyers/DestroyerLeftDamaged.jpg",
+    BASEPATH + "destroyers/DestroyerRightDamaged.jpg"
+};
+
+// Cruisers (3 partes)
+public static final String[] CRUISERS_OK = {
+    BASEPATH + "cruisers/cruisers1.jpg",
+    BASEPATH + "cruisers/cruisers2.jpg",
+    BASEPATH + "cruisers/cruisers3.jpg"
+};
+public static final String[] CRUISERS_DAMAGED = {
+    BASEPATH + "cruisers/cruisers1Damaged.jpg",
+    BASEPATH + "cruisers/cruisers2Damaged.jpg",
+    BASEPATH + "cruisers/cruisers3Damaged.jpg"
+};
+
+// Battleship (4 partes)
+public static final String[] BATTLESHIP_OK = {
+    BASEPATH + "battleship/battleship1.jpg",
+    BASEPATH + "battleship/battleship2.jpg",
+    BASEPATH + "battleship/battleship3.jpg",
+    BASEPATH + "battleship/battleship4.jpg"
+};
+public static final String[] BATTLESHIP_DAMAGED = {
+    BASEPATH + "battleship/battleship1Damaged.jpg",
+    BASEPATH + "battleship/battleship2Damaged.jpg",
+    BASEPATH + "battleship/battleship3Damaged.jpg",
+    BASEPATH + "battleship/battleship4Damaged.jpg"
+};
+    public String living;
+    public String damaged;
+    protected boolean state;
+    public Health(String type, int position){
+        //super();
+        this.state = true;
+        if(type.equals(TYPES[0]) ){
+            living = SUBMARINES_OK[position];
+            damaged = SUBMARINES_DAMAGED[position];
+        }
+        else if(type.equals(TYPES[1])){
+            living = DESTROYERS_OK[position];
+            damaged = DESTROYERS_DAMAGED[position];
+
+        }
+        else if(type.equals(TYPES[2])){
+            living = CRUISERS_OK[position];
+            damaged = CRUISERS_DAMAGED[position];
+        }
+        else{
+            living = BATTLESHIP_OK[position];
+            damaged = BATTLESHIP_DAMAGED[position];
+        }
+        URL path = getPath(living);
+        //Image photo = new Image(getPath1(living).toString());
+        Image photo = new Image(path.toString());
         setImage(photo);
 
     }
 
-	public static String getLIVING() {
-		return LIVING;
-	}
+	
 
-	public static String getDAMAGED() {
-		return DAMAGED;
-	}
-
-	public static String getDEAD() {
-		return DEAD;
-	}
-
-	public int getState() {
+	public boolean getState() {
 		return state;
 	}
 
 
-	public void setState(int state) {
+	public void setState(boolean state) {
 		this.state = state;
         updateState();
 	}
@@ -46,21 +103,17 @@ public class Health extends ImageView {
 
     public void updateState(){
 	    Image photo;
-        switch (state) {
-            case 2:
-                photo = new Image(LIVING);
-                break;
-            case 1:
-                photo = new Image(DAMAGED);
-                break;
-            case 0:
-                photo = new Image(DEAD);
-                break;
-            default:
-                photo = new Image(LIVING);
-                break;
-        }
+	    if(state == true){
+            photo = new Image(getPath(living).toString());
+	    }else{photo = new Image(getPath(damaged).toString());}
         setImage(photo);
     
     }
+    public static URL getPath(String path){
+        return Health.class.getClassLoader().getResource(path);
+    }
+    public URL getPath1(String path){
+        return getClass().getResource(path);
+    }
+
 }

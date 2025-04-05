@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane id="AnchorPane" accessibleRole="CHECK_BOX" prefHeight="448.0" prefWidth="637.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.mycompany.batallanaval.LoaderWindowController">
+<AnchorPane id="AnchorPane" accessibleRole="CHECK_BOX" prefHeight="448.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.batallanaval.LoaderWindowController">
    <children>
       <GridPane gridLinesVisible="true" layoutX="317.0" layoutY="14.0" prefHeight="166.0" prefWidth="194.0">
         <columnConstraints>
@@ -40,11 +39,11 @@
             <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <Button layoutX="211.0" layoutY="354.0" mnemonicParsing="false" text="Random" />
+      <Button fx:id="btnRandom" layoutX="211.0" layoutY="354.0" mnemonicParsing="false" text="Random" />
       <Button fx:id="btnBack" layoutX="580.0" layoutY="353.0" mnemonicParsing="false" onAction="#back" text="Back" />
-      <VBox layoutX="18.0" layoutY="14.0" prefHeight="304.0" prefWidth="250.0" />
+      <VBox fx:id="vbBoats" layoutX="18.0" layoutY="14.0" prefHeight="304.0" prefWidth="250.0" />
       <Button layoutX="489.0" layoutY="354.0" mnemonicParsing="false" text="Start Game" />
-      <Button layoutX="165.0" layoutY="354.0" mnemonicParsing="false" text="Set" />
+      <Button fx:id="btnSet" layoutX="165.0" layoutY="354.0" mnemonicParsing="false" text="Set" />
       <Spinner fx:id="spnRow" layoutX="17.0" layoutY="354.0" prefHeight="5.0" prefWidth="50.0" />
       <Spinner fx:id="spnColumn" layoutX="93.0" layoutY="354.0" prefHeight="5.0" prefWidth="50.0" />
       <Label layoutX="17.0" layoutY="331.0" prefHeight="19.0" prefWidth="50.0" text="Row" />
