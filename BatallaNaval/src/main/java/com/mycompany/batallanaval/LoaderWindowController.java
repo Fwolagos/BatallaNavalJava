@@ -15,6 +15,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
+import java.util.ArrayList;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -22,6 +24,8 @@ import javafx.scene.control.SpinnerValueFactory;
  * @author ANTONY JOSUE
  */
 public class LoaderWindowController implements Initializable {
+
+    public static final String[] TYPES = {"submarines","destroyers","cruisers","battleship"};
 
 	@FXML
 	private Spinner<Integer> spnRow;
@@ -33,6 +37,16 @@ public class LoaderWindowController implements Initializable {
 	private ListView<String> lvPlayer;
 	@FXML
 	private ListView<String> lvDifficult;
+
+	@FXML
+	private Button btnRandom;
+	@FXML
+	private VBox vbBoats;
+	@FXML
+	private Button btnSet;
+		//prueba para avance II
+	ArrayList<Boat> boats = new ArrayList<>();
+
 
 	/**
 	 * Initializes the controller class.
@@ -47,6 +61,17 @@ public class LoaderWindowController implements Initializable {
 		ObservableList<String> difficult = FXCollections.observableArrayList("Easy","Nomal","Hard");
 		lvPlayer.setItems(kindOfPlayer);		
 		lvDifficult.setItems(difficult);
+		//funcion temporal para generar un par de barcos 
+		for (String tipo : TYPES) {
+            Boat nuevoBarco = new Boat(tipo);
+            boats.add(nuevoBarco);
+        }
+		for (Boat i: boats){
+			vbBoats.getChildren().add(i);
+		}
+		//cierre de funcion temporal
+
+
 	}	
 	
 	@FXML
