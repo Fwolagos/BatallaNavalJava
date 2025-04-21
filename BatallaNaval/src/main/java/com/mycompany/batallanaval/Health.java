@@ -10,7 +10,7 @@ import javafx.scene.image.ImageView;
  *
  * @author ANTONY JOSUE
  */
-public class Health extends ImageView {
+public class Health extends ImageView  {
     public static final String[] TYPES = {"submarines","destroyers","cruisers","battleship"};
     public static final String BASEPATH = "others/img/";
 
@@ -61,6 +61,8 @@ public static final String[] BATTLESHIP_DAMAGED = {
     public String living;
     public String damaged;
     protected boolean state;
+    private Position coordenates;
+
     public Health(String type, int position){
         //super();
         this.state = true;
@@ -81,10 +83,14 @@ public static final String[] BATTLESHIP_DAMAGED = {
             living = BATTLESHIP_OK[position];
             damaged = BATTLESHIP_DAMAGED[position];
         }
-        URL path = getPath(living);
+        URL path = Tools.getPath(living);
+        //URL path = getPath(living); //Tools.getPath(living);
         //Image photo = new Image(getPath1(living).toString());
         Image photo = new Image(path.toString());
         setImage(photo);
+        coordenates = new Position();
+        // setFitWidth(28);
+        // setFitHeight(28);
 
     }
 
@@ -104,16 +110,26 @@ public static final String[] BATTLESHIP_DAMAGED = {
     public void updateState(){
 	    Image photo;
 	    if(state == true){
-            photo = new Image(getPath(living).toString());
-	    }else{photo = new Image(getPath(damaged).toString());}
+            photo = new Image(Tools.getPath(living).toString());
+	    }else{photo = new Image(Tools.getPath(damaged).toString());}
         setImage(photo);
     
     }
-    public static URL getPath(String path){
-        return Health.class.getClassLoader().getResource(path);
-    }
-    public URL getPath1(String path){
-        return getClass().getResource(path);
+    
+
+	public Position getCoordenates() {
+		return coordenates;
+	}
+
+	public void setCoordenates(Position pCoordenates) {
+		this.coordenates = pCoordenates;
+	}
+
+    public void restartOrientation(){
+        setRotate(0);      // Reinicia la rotación
+        setScaleX(1);      // Reinicia volteo horizontal
+        setScaleY(1);      // Reinicia volteo vertical
+
     }
 
 }
