@@ -20,7 +20,6 @@ public class Game {
     protected NonPlayerCharacter pc;
     protected ArrayList<Boat> deadBoatsPlayer;
     protected ArrayList<Boat> deadBoatsPc;
-    protected ArrayList<Position> hits;
     protected int counterSuccessesPlayer;
     protected int counterSuccessesPc;
 
@@ -29,7 +28,6 @@ public class Game {
         this.pc = new NonPlayerCharacter();
         this.deadBoatsPc = new ArrayList<>();
         this.deadBoatsPlayer = new ArrayList<>();
-        this.hits = new ArrayList<>();
     }
 
     public Game(Player player, NonPlayerCharacter pc) {
@@ -37,7 +35,6 @@ public class Game {
         this.pc = pc;
         this.deadBoatsPc = new ArrayList<>();
         this.deadBoatsPlayer = new ArrayList<>();
-        this.hits = new ArrayList<>();
     }
 
     public Player getPlayer() {
@@ -93,7 +90,6 @@ public class Game {
             if (!(square instanceof Health)) {
                 Tools.markShot(square, Tools.TYPE_OF_SHOTS[1]);
             }
-            hits.add(coordenates);
             counterSuccessesPlayer++;
             if (counterSuccessesPlayer == 2) {
                 counterSuccessesPlayer = 0;
@@ -110,14 +106,16 @@ public class Game {
         }
 
         do {
-            coordenates = pc.makeShot();
+            if (pc.getDifficulty() == pc.DIFFICULTY[2]) {
+                coordenates = pc.shootHard(player.getBoats());
+            } else {
+
+                coordenates = pc.makeShot();
+            }
             info = player.handleShootEnemy(coordenates);
             if (info.isDamaged()) {
                 if (pc.getDifficulty() == pc.DIFFICULTY[1]) {
                     pc.notifyHit(coordenates, true);
-                }
-                if (pc.getDifficulty() == pc.DIFFICULTY[2]) {
-                    pc.notifyHit(coordenates);
                 }
                 counterSuccessesPc++;
                 if (counterSuccessesPc == 2 && pc.getDifficulty() == pc.DIFFICULTY[2] && !deadBoatsPc.isEmpty()) {
