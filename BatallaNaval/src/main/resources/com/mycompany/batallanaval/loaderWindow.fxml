@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,9 +10,12 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" accessibleRole="CHECK_BOX" prefHeight="448.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.batallanaval.LoaderWindowController">
+<AnchorPane id="AnchorPane" accessibleRole="CHECK_BOX" prefHeight="448.0" prefWidth="637.0" styleClass="loaderWindowBackground" stylesheets="@../../../others/style/css.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.batallanaval.LoaderWindowController">
    <children>
-      <GridPane gridLinesVisible="true" layoutX="317.0" layoutY="14.0" prefHeight="166.0" prefWidth="194.0">
+      <Button fx:id="btnRotate" layoutX="164.0" layoutY="365.0" mnemonicParsing="false" onAction="#rotateBoatOfGridPane" text="Rotate" />
+      <Button fx:id="btnBack" layoutX="581.0" layoutY="408.0" mnemonicParsing="false" onAction="#back" text="Back" />
+      <VBox fx:id="vbBoats" layoutX="18.0" layoutY="14.0" prefHeight="304.0" prefWidth="250.0" styleClass="vboxBackground2" stylesheets="@../../../others/style/css.css" />
+      <GridPane fx:id="gpOcean" gridLinesVisible="true" layoutX="319.0" layoutY="31.0" prefHeight="166.0" prefWidth="194.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
@@ -39,19 +41,38 @@
             <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <Button fx:id="btnRandom" layoutX="211.0" layoutY="354.0" mnemonicParsing="false" text="Random" />
-      <Button fx:id="btnBack" layoutX="580.0" layoutY="353.0" mnemonicParsing="false" onAction="#back" text="Back" />
-      <VBox fx:id="vbBoats" layoutX="18.0" layoutY="14.0" prefHeight="304.0" prefWidth="250.0" />
-      <Button layoutX="489.0" layoutY="354.0" mnemonicParsing="false" text="Start Game" />
-      <Button fx:id="btnSet" layoutX="165.0" layoutY="354.0" mnemonicParsing="false" text="Set" />
-      <Spinner fx:id="spnRow" layoutX="17.0" layoutY="354.0" prefHeight="5.0" prefWidth="50.0" />
-      <Spinner fx:id="spnColumn" layoutX="93.0" layoutY="354.0" prefHeight="5.0" prefWidth="50.0" />
-      <Label layoutX="17.0" layoutY="331.0" prefHeight="19.0" prefWidth="50.0" text="Row" />
-      <Label layoutX="93.0" layoutY="331.0" prefHeight="19.0" prefWidth="50.0" text="Column" />
-      <ListView fx:id="lvPlayer" layoutX="367.0" layoutY="353.0" prefHeight="26.0" prefWidth="115.0" />
-      <Label layoutX="300.0" layoutY="331.0" prefHeight="19.0" prefWidth="50.0" text="Difficult:" />
-      <Label layoutX="379.0" layoutY="331.0" prefHeight="19.0" prefWidth="50.0" text="Player:" />
-      <ListView fx:id="lvDifficult" layoutX="287.0" layoutY="353.0" prefHeight="26.0" prefWidth="75.0" />
-      <TextField layoutX="287.0" layoutY="393.0" prefHeight="26.0" prefWidth="196.0" promptText="Player Name" />
+      <Button layoutX="482.0" layoutY="408.0" mnemonicParsing="false" onAction="#goToGameWindow" text="Start Game" />
+      <Button fx:id="btnSet" layoutX="14.0" layoutY="403.0" mnemonicParsing="false" onAction="#setBoatOfGridPane" prefHeight="34.0" prefWidth="54.0" text="Set" />
+      <Spinner fx:id="spnRow" layoutX="16.0" layoutY="369.0" prefHeight="26.0" prefWidth="50.0" />
+      <Spinner fx:id="spnColumn" layoutX="92.0" layoutY="369.0" prefHeight="5.0" prefWidth="50.0" />
+      <Label layoutX="16.0" layoutY="339.0" prefHeight="19.0" prefWidth="50.0" text="Row" />
+      <Label layoutX="70.0" layoutY="335.0" prefHeight="38.0" prefWidth="94.0" text="Column" />
+      <Label layoutX="276.0" layoutY="340.0" prefHeight="30.0" prefWidth="94.0" text="Difficulty" />
+      <Label layoutX="412.0" layoutY="339.0" prefHeight="30.0" prefWidth="63.0" stylesheets="@../../../others/style/css.css" text="Player:" />
+      <TextField fx:id="tbName" layoutX="274.0" layoutY="407.0" prefHeight="26.0" prefWidth="196.0" promptText="Player Name" />
+      <Spinner fx:id="spnDifficulty" layoutX="278.0" layoutY="370.0" prefHeight="26.0" prefWidth="101.0" />
+      <Spinner fx:id="spnKindOfPlayer" layoutX="412.0" layoutY="368.0" prefHeight="26.0" prefWidth="207.0" />
+      <Button fx:id="btnRandom" layoutX="164.0" layoutY="403.0" mnemonicParsing="false" onAction="#putRandomShips" prefHeight="34.0" prefWidth="85.0" text="Random" />
+      <Button fx:id="btnDelete" layoutX="87.0" layoutY="403.0" mnemonicParsing="false" onAction="#deleteBoatOfGridPane" text="Del" />
+      <Label layoutX="299.0" layoutY="38.0" prefHeight="12.0" prefWidth="7.0" text="0" />
+      <Label layoutX="299.0" layoutY="68.0" prefHeight="18.0" prefWidth="7.0" text="1" />
+      <Label layoutX="299.0" layoutY="101.0" prefHeight="12.0" prefWidth="7.0" text="2" />
+      <Label layoutX="299.0" layoutY="131.0" prefHeight="18.0" prefWidth="7.0" text="3" />
+      <Label layoutX="299.0" layoutY="161.0" prefHeight="12.0" prefWidth="7.0" text="4" />
+      <Label layoutX="299.0" layoutY="191.0" prefHeight="18.0" prefWidth="7.0" text="5" />
+      <Label layoutX="299.0" layoutY="224.0" prefHeight="12.0" prefWidth="7.0" text="6" />
+      <Label layoutX="299.0" layoutY="254.0" prefHeight="18.0" prefWidth="7.0" text="7" />
+      <Label layoutX="299.0" layoutY="280.0" prefHeight="12.0" prefWidth="7.0" text="8" />
+      <Label layoutX="299.0" layoutY="310.0" prefHeight="18.0" prefWidth="7.0" text="9" />
+      <Label layoutX="328.0" layoutY="-1.0" prefHeight="12.0" prefWidth="7.0" text="0" />
+      <Label layoutX="359.0" layoutY="-1.0" prefHeight="18.0" prefWidth="7.0" text="1" />
+      <Label layoutX="388.0" layoutY="-2.0" prefHeight="12.0" prefWidth="7.0" text="2" />
+      <Label layoutX="421.0" layoutY="-2.0" prefHeight="18.0" prefWidth="7.0" text="3" />
+      <Label layoutX="453.0" layoutY="-2.0" prefHeight="12.0" prefWidth="7.0" text="4" />
+      <Label layoutX="482.0" layoutY="-2.0" prefHeight="18.0" prefWidth="7.0" text="5" />
+      <Label layoutX="511.0" layoutY="-2.0" prefHeight="12.0" prefWidth="7.0" text="6" />
+      <Label layoutX="543.0" layoutY="-3.0" prefHeight="18.0" prefWidth="7.0" text="7" />
+      <Label layoutX="571.0" layoutY="-3.0" prefHeight="12.0" prefWidth="7.0" text="8" />
+      <Label layoutX="602.0" layoutY="-3.0" prefHeight="18.0" prefWidth="7.0" text="9" />
    </children>
 </AnchorPane>
