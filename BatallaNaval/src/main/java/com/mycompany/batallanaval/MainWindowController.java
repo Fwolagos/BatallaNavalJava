@@ -9,6 +9,13 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -28,8 +35,36 @@ public class MainWindowController implements Initializable {
         // TODO
     }    
 	@FXML
-    private void go() throws IOException {
-	     App.setRoot("loaderWindow");
+    private void go(ActionEvent event) throws IOException {
+	     FXMLLoader loader = new FXMLLoader(getClass().getResource("loaderWindow.fxml"));
+			Parent root = loader.load(); // Carga el FXML y crea los nodos
+			// GameWindowController controller = loader.getController(); // Obtiene la instancia del controlador
+
+			// Ahora podés pasarle datos al controlador
+					Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+
+			Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			currentStage.close();
+    }
+	@FXML
+    private void goAboutIt(ActionEvent event) throws IOException {
+	    FXMLLoader loader = new FXMLLoader(getClass().getResource("creditsWindow.fxml"));
+			Parent root = loader.load(); // Carga el FXML y crea los nodos
+			// GameWindowController controller = loader.getController(); // Obtiene la instancia del controlador
+
+			// Ahora podés pasarle datos al controlador
+					Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+
+			Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			currentStage.close(); 
+    }
+	@FXML
+    private void endGame(){
+        Platform.exit();
     }
     
 }
