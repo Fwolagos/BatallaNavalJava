@@ -73,11 +73,10 @@ public class Game {
     }
 
     public void turn(Position coordenates, ImageView square, GridPane gpEnemy) {
-        Node node = Tools.getNodeFromGridPane(gpEnemy, coordenates);
         if (player.locationShoots[coordenates.getX()][coordenates.getY()]) {
             return;
         }
-        if (!(GameWindowController.kindOfPlayer == Tools.TYPE_PLAYERS[1])) {
+        if (!(square instanceof Health)) {
             Tools.markShot(square, Tools.TYPE_OF_SHOTS[0]);
         }
         ShootingInformation info;
@@ -92,7 +91,7 @@ public class Game {
         }
         if (info.isDamaged()) {
             if (!(square instanceof Health)) {
-                    Tools.markShot(square, Tools.TYPE_OF_SHOTS[1]);
+                Tools.markShot(square, Tools.TYPE_OF_SHOTS[1]);
             }
             hits.add(coordenates);
             counterSuccessesPlayer++;
@@ -146,7 +145,7 @@ public class Game {
 
         } else {
             turn(coordenates, square, gpEnemy);
-            if(!(player.canPlay() && pc.canPlay())){
+            if (!(player.canPlay() && pc.canPlay())) {
                 return false;
 
             }
