@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="743.0" prefWidth="600.0" styleClass="gameWindowBackground" stylesheets="@../../../others/style/css.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.batallanaval.GameWindowController">
+   <children>
+      <GridPane fx:id="gpPlayer" gridLinesVisible="true" layoutX="60.0" layoutY="387.0" prefHeight="166.0" prefWidth="194.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <GridPane fx:id="gpEnemy" gridLinesVisible="true" layoutX="60.0" layoutY="52.0" prefHeight="280.0" prefWidth="250.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <VBox layoutX="424.0" layoutY="247.0" />
+      <Label layoutX="45.0" layoutY="59.0" prefHeight="12.0" prefWidth="7.0" text="0" />
+      <Label layoutX="45.0" layoutY="89.0" prefHeight="18.0" prefWidth="7.0" text="1" />
+      <Label layoutX="45.0" layoutY="122.0" prefHeight="12.0" prefWidth="7.0" text="2" />
+      <Label layoutX="45.0" layoutY="152.0" prefHeight="18.0" prefWidth="7.0" text="3" />
+      <Label layoutX="45.0" layoutY="182.0" prefHeight="12.0" prefWidth="7.0" text="4" />
+      <Label layoutX="45.0" layoutY="212.0" prefHeight="18.0" prefWidth="7.0" text="5" />
+      <Label layoutX="45.0" layoutY="245.0" prefHeight="12.0" prefWidth="7.0" text="6" />
+      <Label layoutX="45.0" layoutY="275.0" prefHeight="18.0" prefWidth="7.0" text="7" />
+      <Label layoutX="45.0" layoutY="301.0" prefHeight="12.0" prefWidth="7.0" text="8" />
+      <Label layoutX="45.0" layoutY="331.0" prefHeight="18.0" prefWidth="7.0" text="9" />
+      <Label layoutX="45.0" layoutY="393.0" prefHeight="12.0" prefWidth="7.0" text="0" />
+      <Label layoutX="45.0" layoutY="423.0" prefHeight="18.0" prefWidth="7.0" text="1" />
+      <Label layoutX="45.0" layoutY="456.0" prefHeight="12.0" prefWidth="7.0" text="2" />
+      <Label layoutX="45.0" layoutY="486.0" prefHeight="18.0" prefWidth="7.0" text="3" />
+      <Label layoutX="45.0" layoutY="516.0" prefHeight="12.0" prefWidth="7.0" text="4" />
+      <Label layoutX="45.0" layoutY="546.0" prefHeight="18.0" prefWidth="7.0" text="5" />
+      <Label layoutX="45.0" layoutY="579.0" prefHeight="12.0" prefWidth="7.0" text="6" />
+      <Label layoutX="45.0" layoutY="609.0" prefHeight="18.0" prefWidth="7.0" text="7" />
+      <Label layoutX="45.0" layoutY="635.0" prefHeight="12.0" prefWidth="7.0" text="8" />
+      <Label layoutX="45.0" layoutY="665.0" prefHeight="18.0" prefWidth="7.0" text="9" />
+      <Label layoutX="69.0" layoutY="363.0" prefHeight="12.0" prefWidth="7.0" text="0" />
+      <Label layoutX="100.0" layoutY="363.0" prefHeight="18.0" prefWidth="7.0" text="1" />
+      <Label layoutX="129.0" layoutY="362.0" prefHeight="12.0" prefWidth="7.0" text="2" />
+      <Label layoutX="162.0" layoutY="362.0" prefHeight="18.0" prefWidth="7.0" text="3" />
+      <Label layoutX="194.0" layoutY="362.0" prefHeight="12.0" prefWidth="7.0" text="4" />
+      <Label layoutX="223.0" layoutY="362.0" prefHeight="18.0" prefWidth="7.0" text="5" />
+      <Label layoutX="252.0" layoutY="362.0" prefHeight="12.0" prefWidth="7.0" text="6" />
+      <Label layoutX="284.0" layoutY="361.0" prefHeight="18.0" prefWidth="7.0" text="7" />
+      <Label layoutX="312.0" layoutY="361.0" prefHeight="12.0" prefWidth="7.0" text="8" />
+      <Label layoutX="343.0" layoutY="361.0" prefHeight="18.0" prefWidth="7.0" text="9" />
+      <Button fx:id="bntShoot" layoutX="387.0" layoutY="387.0" mnemonicParsing="false" onAction="#play" prefHeight="34.0" prefWidth="74.0" text="Shoot" />
+      <Button fx:id="btnGiveUp" layoutX="475.0" layoutY="387.0" mnemonicParsing="false" onAction="#giveUp" prefHeight="34.0" prefWidth="82.0" text="Give Up" />
+   </children>
+</AnchorPane>

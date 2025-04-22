@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="414.0" prefWidth="492.0" styleClass="creditsWindowBackground" stylesheets="@../../../others/style/css.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.batallanaval.CreditsWindowController">
+   <children>
+      <Label layoutX="159.0" layoutY="28.0" prefHeight="30.0" prefWidth="173.0" text="BattleShip Credits" />
+      <Label layoutX="94.0" layoutY="97.0" stylesheets="@../../../others/style/css.css" text="Autor: Antony Josue Prendas Vega" />
+      <TextArea editable="false" layoutX="86.0" layoutY="152.0" prefHeight="226.0" prefWidth="318.0" styleClass="TextArea" stylesheets="@../../../others/style/css.css" text="Battlership is a strategy &#10;board game for two player&#10; where players take turn &#10;guessing the locati'on fo &#10;their opponent's ships.&#10; The goal is to sink the other &#10;player's fleet." />
+      <Button layoutX="410.0" layoutY="24.0" mnemonicParsing="false" onAction="#back" text="Back" />
+   </children>
+</AnchorPane>
